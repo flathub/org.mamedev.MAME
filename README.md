@@ -28,4 +28,4 @@ An explanation for some of the options included in the `org.mamedev.MAME.yaml' m
 
 ### Configuring
 
-Default ini paths include the home '\~/.mame' directory and two relative paths '.' and 'ini'.  The relative paths are not helpful inside the sandbox, and the '\~/.mame' contents shouldn't be overwritten with each new MAME release.  Instead the default ini search path is patched to '$HOME/.mame;/app/share/mame/ini'.  This will allow a default base ini in '/app/share/mame/ini/mame.ini' and can be overridden in '\~/.mame/mame.ini'.
+The default ini paths include the home `~/.mame` directory and two relative paths '.' and 'ini'.  The relative paths are not helpful inside the sandbox, and the `~/.mame` contents shouldn't be overwritten with each new MAME release.  Instead the default ini search path is patched to `$HOME/.mame;/app/share/mame/ini`.  This will allow a default base ini in `/app/share/mame/ini/mame.ini` and can be overridden in `~/.mame/mame.ini`.

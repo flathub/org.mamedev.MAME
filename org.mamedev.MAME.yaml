@@ -22,7 +22,11 @@ modules:
       no-debuginfo: true
       strip: true
     build-commands:
-      - make -j ${FLATPAK_BUILDER_N_JOBS} USE_SYSTEM_LIB_FLAC=1 LDOPTS=-Wl,-s
+      - make
+          -j ${FLATPAK_BUILDER_N_JOBS}
+          USE_SYSTEM_LIB_FLAC=1
+          SDL_INI_PATH='$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
+          LDOPTS=-Wl,-s
       - install -Dm 0755 mame ${FLATPAK_DEST}/bin/mame
       - install -Dm 0644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm 0644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
@@ -74,5 +78,3 @@ modules:
         path: org.mamedev.MAME.metainfo.xml
       - type: file
         path: mame.ini
-      - type: patch
-        path: inipath.patch
