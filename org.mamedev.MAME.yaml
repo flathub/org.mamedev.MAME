@@ -82,3 +82,5 @@ modules:
         path: mame.ini
       - type: patch
         path: floppy.patch
+      - type: patch
+        path: sound.patch

@@ -1,0 +1,16 @@
+diff --git a/src/emu/sound.cpp b/src/emu/sound.cpp
+index a0293063..0525b74f 100644
+--- a/src/emu/sound.cpp
++++ b/src/emu/sound.cpp
+@@ -245,7 +245,10 @@ attotime stream_buffer::index_time(s32 index) const
+ u32 stream_buffer::time_to_buffer_index(attotime time, bool round_up, bool allow_expansion)
+ {
+ 	// compute the sample index within the second
+-	int sample = (time.attoseconds() + (round_up ? (m_sample_attos - 1) : 0)) / m_sample_attos;
++	printf("m_sample_attos: %ld%s", m_sample_attos, (m_sample_attos == 0 ? "<--\n" : "\n"));
++	int sample = 0;
++	if (m_sample_attos != 0)
++		sample = (time.attoseconds() + (round_up ? (m_sample_attos - 1) : 0)) / m_sample_attos;
+ 	sound_assert(sample >= 0 && sample <= size());
+ 
+ 	// if the time is past the current end, make it the end
