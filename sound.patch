@@ -1,35 +1,28 @@
 diff --git a/src/emu/sound.cpp b/src/emu/sound.cpp
-index a0293063..b2507306 100644
+index a0293063..c4989abb 100644
 --- a/src/emu/sound.cpp
 +++ b/src/emu/sound.cpp
 @@ -761,6 +761,9 @@ read_stream_view sound_stream::update_view(attotime start, attotime end, u32 out
  	}
  	g_profiler.stop();
  
-+	if (!m_output_view[outputnum].m_buffer)
++	if (!m_output_view[outputnum].valid())
 +		m_output_view[outputnum] = empty_view(start, end);
 +
  	// return the requested view
  	return read_stream_view(m_output_view[outputnum], start);
  }
 diff --git a/src/emu/sound.h b/src/emu/sound.h
-index 15f6a574..9d5dbfa6 100644
+index 15f6a574..bfa45c45 100644
 --- a/src/emu/sound.h
 +++ b/src/emu/sound.h
-@@ -328,6 +328,8 @@ public:
- 		return m_buffer->get(index);
+@@ -284,6 +284,9 @@ public:
+ 		return *this;
  	}
  
-+	stream_buffer *m_buffer;              // pointer to the stream buffer we're viewing
++	// check basic constraints
++	bool valid() const { return m_buffer != nullptr; }
 +
- protected:
- 	// normalize start/end
- 	void normalize_start_end()
-@@ -340,7 +342,6 @@ protected:
- 	}
+ 	// return the local gain
+ 	sample_t gain() const { return m_gain; }
  
- 	// internal state
--	stream_buffer *m_buffer;              // pointer to the stream buffer we're viewing
- 	s32 m_end;                            // ending sample index (always >= start)
- 	s32 m_start;                          // starting sample index
- 	sample_t m_gain;                      // overall gain factor
