@@ -1,52 +1,13 @@
-diff --git a/src/emu/sound.cpp b/src/emu/sound.cpp
-index a0293063..abee0ee9 100644
---- a/src/emu/sound.cpp
-+++ b/src/emu/sound.cpp
-@@ -762,6 +762,8 @@ read_stream_view sound_stream::update_view(attotime start, attotime end, u32 out
- 	g_profiler.stop();
- 
- 	// return the requested view
-+	if (!m_output_view[outputnum].m_buffer)
-+		printf("NULL m_buffer\n");
- 	return read_stream_view(m_output_view[outputnum], start);
- }
- 
 diff --git a/src/emu/sound.h b/src/emu/sound.h
-index 15f6a574..1ceae0ed 100644
+index 15f6a574..2410bbee 100644
 --- a/src/emu/sound.h
 +++ b/src/emu/sound.h
-@@ -185,7 +185,8 @@ private:
+@@ -269,7 +269,7 @@ public:
+ 
+ 	// copy constructor that sets a different start time
+ 	read_stream_view(read_stream_view const &src, attotime start) :
+-		read_stream_view(src.m_buffer, src.m_buffer->time_to_buffer_index(start, false), src.m_end, src.m_gain)
++		read_stream_view(src.m_buffer, src.m_buffer ? src.m_buffer->time_to_buffer_index(start, false) : src.m_start, src.m_end, src.m_gain)
+ 	{
  	}
  
- 	// fill the buffer with the given value
--	void fill(sample_t value) { std::fill_n(&m_buffer[0], m_buffer.size(), value); }
-+	void fill(sample_t value) { std::fill_n(&m_buffer[0],
-+ m_buffer.size(), value); }
- 
- 	// return the attotime of a given index within the buffer
- 	attotime index_time(s32 index) const;
-@@ -204,6 +205,7 @@ private:
- 	u32 m_end_sample;                     // current sample number within the final second
- 	u32 m_sample_rate;                    // sample rate of the data in the buffer
- 	attoseconds_t m_sample_attos;         // pre-computed attoseconds per sample
-+public:
- 	std::vector<sample_t> m_buffer;       // vector of actual buffer data
- 
- #if (SOUND_DEBUG)
-@@ -328,6 +330,8 @@ public:
- 		return m_buffer->get(index);
- 	}
- 
-+	stream_buffer *m_buffer;              // pointer to the stream buffer we're viewing
-+
- protected:
- 	// normalize start/end
- 	void normalize_start_end()
-@@ -340,7 +344,6 @@ protected:
- 	}
- 
- 	// internal state
--	stream_buffer *m_buffer;              // pointer to the stream buffer we're viewing
- 	s32 m_end;                            // ending sample index (always >= start)
- 	s32 m_start;                          // starting sample index
- 	sample_t m_gain;                      // overall gain factor
