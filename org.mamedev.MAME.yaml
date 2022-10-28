@@ -83,3 +83,5 @@ modules:
         path: floppy.patch
       - type: patch
         path: sound.patch
+      - type: patch
+        path: selgame.patch
