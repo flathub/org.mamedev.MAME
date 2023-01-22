@@ -24,7 +24,7 @@ modules:
     build-commands:
       - make
           -j ${FLATPAK_BUILDER_N_JOBS}
-          OPTIMIZE=0
+          OPTIMIZE=1
           DEBUG=1
           SYMBOLS=1
           SYMLEVEL=3
