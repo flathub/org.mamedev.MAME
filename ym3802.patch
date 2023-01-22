@@ -1,8 +1,16 @@
 diff --git a/src/devices/machine/ym3802.cpp b/src/devices/machine/ym3802.cpp
-index 4a8f6a7ffae..d1bf2b961f6 100644
+index 4a8f6a7ffae..3cf425d0dac 100644
 --- a/src/devices/machine/ym3802.cpp
 +++ b/src/devices/machine/ym3802.cpp
-@@ -45,7 +45,7 @@ void ym3802_device::device_start()
+@@ -14,6 +14,7 @@
+ 
+ #include "emu.h"
+ #include "ym3802.h"
++#include <iostream>
+ 
+ 
+ DEFINE_DEVICE_TYPE(YM3802, ym3802_device, "ym3802", "Yamaha YM3802 MCS MIDI Communication and Service Controller")
+@@ -45,7 +46,7 @@ void ym3802_device::device_start()
  
  void ym3802_device::device_reset()
  {
@@ -11,3 +19,11 @@ index 4a8f6a7ffae..d1bf2b961f6 100644
  	reset_irq(0xff);
  	transmit_register_reset();
  	receive_register_reset();
+@@ -129,6 +130,7 @@ TIMER_CALLBACK_MEMBER(ym3802_device::midi_clk)
+ void ym3802_device::reset_midi_timer()
+ {
+ 	uint32_t rate;
++	std::cout << "m_reg " << REG_TRR << " / " << m_reg.size() << std::endl;
+ 	uint8_t divisor = m_reg[REG_TRR] & 0x1f;
+ 
+ 	if(!(divisor & 0x10))
