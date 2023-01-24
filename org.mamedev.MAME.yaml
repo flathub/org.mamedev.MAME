@@ -84,4 +84,6 @@ modules:
       - type: file
         path: mame.ini
       - type: patch
+        path: floppy.patch
+      - type: patch
         path: ym3802.patch
