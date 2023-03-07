@@ -2,7 +2,7 @@
 Name=MAME
 GenericName=Emulator
 Comment=A multi-purpose emulation framework
-Exec=mame
+Exec=mamed
 Type=Application
 Icon=org.mamedev.MAME
 Categories=Game;ArcadeGame;Emulator
