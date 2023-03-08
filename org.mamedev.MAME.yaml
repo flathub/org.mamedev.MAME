@@ -60,7 +60,7 @@ modules:
       - type: git
         url: https://github.com/mamedev/mame.git
         branch: master
-        commit: dc03ce8fbc61b87fb2c1539221ee85bb4ef72339
+        commit: 5cde98efd94ee8e0554e9abdbc3a3096519c2d5f
       - type: file
         path: mame16x16.png
       - type: file
