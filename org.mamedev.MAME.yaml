@@ -20,7 +20,7 @@ modules:
     buildsystem: simple
     build-options:
       no-debuginfo: false
-      strip: false
+      strip: true
     build-commands:
       - make
           -j ${FLATPAK_BUILDER_N_JOBS}
@@ -60,8 +60,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/mamedev/mame.git
-        branch: master
-        commit: 5cde98efd94ee8e0554e9abdbc3a3096519c2d5f
+        commit: 16a8b6da4345ba69655c99377af917b11b1d471e
       - type: file
         path: mame16x16.png
       - type: file
