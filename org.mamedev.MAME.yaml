@@ -19,7 +19,7 @@ modules:
   - name: mame
     buildsystem: simple
     build-options:
-      no-debuginfo: true
+      no-debuginfo: false
       strip: true
     build-commands:
       - make
