@@ -85,3 +85,5 @@ modules:
         path: sound.patch
       - type: patch
         path: ym3802.patch
+      - type: patch
+        path: irobot.patch
