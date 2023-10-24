@@ -11,6 +11,7 @@ finish-args:
   - --filesystem=host:ro
   - --share=network
   - --share=ipc
+  - --socket=x11
   - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=wayland
@@ -25,6 +26,7 @@ modules:
       - make
           -j ${FLATPAK_BUILDER_N_JOBS}
           CFLAGS+=-Wno-error=restrict
+          USE_WAYLAND=1
           USE_SYSTEM_LIB_FLAC=1
           SDL_INI_PATH='$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
           LDOPTS=-Wl,-s
