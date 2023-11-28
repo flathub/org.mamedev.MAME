@@ -11,6 +11,7 @@ finish-args:
   - --filesystem=host:ro
   - --share=network
   - --share=ipc
+  - --socket=x11
   - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=wayland
@@ -25,6 +26,7 @@ modules:
       - make
           -j ${FLATPAK_BUILDER_N_JOBS}
           CFLAGS+=-Wno-error=restrict
+          USE_WAYLAND=1
           USE_SYSTEM_LIB_FLAC=1
           SDL_INI_PATH='$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
           LDOPTS=-Wl,-s
@@ -57,8 +59,8 @@ modules:
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
       - type: archive
-        url: https://github.com/mamedev/mame/archive/refs/tags/mame0260.tar.gz
-        sha256: 104ca8daab3ce7bb9637e19f1dc60a08ac6856db730ab544275567addb9541cd
+        url: https://github.com/mamedev/mame/archive/refs/tags/mame0261.tar.gz
+        sha256: 51d5ce1563897709ceb7a924c31a70cc5ff2bec466aab8d0cc9ff3cc72b38899
       - type: file
         path: mame16x16.png
       - type: file
