@@ -26,6 +26,7 @@ modules:
       - make
           -j ${FLATPAK_BUILDER_N_JOBS}
           CFLAGS+=-Wno-error=restrict
+          TOOLS=1
           USE_WAYLAND=1
           USE_SYSTEM_LIB_FLAC=1
           SDL_INI_PATH='$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
@@ -59,8 +60,8 @@ modules:
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
       - type: archive
-        url: https://github.com/mamedev/mame/archive/refs/tags/mame0264.tar.gz
-        sha256: 3d9f69ed3ef7c1628d5714c8ae2695ea77b1a652a93347b2703f7c862299376e
+        url: https://github.com/mamedev/mame/archive/refs/tags/mame0265.tar.gz
+        sha256: 3de68db66efb783eb5c5d7ccad1f4a4f5eadc6c7a29c1a9c2097e532c3e0b8b1
       - type: file
         path: mame16x16.png
       - type: file
