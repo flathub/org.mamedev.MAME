@@ -59,9 +59,9 @@ modules:
       - cp -r roms/ ${FLATPAK_DEST}/share/mame/
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
-      - type: archive
-        url: https://github.com/mamedev/mame/archive/refs/tags/mame0265.tar.gz
-        sha256: 3de68db66efb783eb5c5d7ccad1f4a4f5eadc6c7a29c1a9c2097e532c3e0b8b1
+      - type: git
+        url: https://github.com/mamedev/mame.git
+        commit: efce9864b44afb4681f6ad974378b0b501dfe12c
       - type: file
         path: mame16x16.png
       - type: file
