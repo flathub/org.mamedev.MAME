@@ -32,6 +32,17 @@ modules:
           SDL_INI_PATH='$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
           LDOPTS=-Wl,-s
       - install -Dm 0755 mame ${FLATPAK_DEST}/bin/mame
+      - install -Dm 0755 castool ${FLATPAK_DEST}/bin/castool
+      - install -Dm 0755 chdman ${FLATPAK_DEST}/bin/chdman
+      - install -Dm 0755 floptool ${FLATPAK_DEST}/bin/floptool
+      - install -Dm 0755 imgtool ${FLATPAK_DEST}/bin/imgtool
+      - install -Dm 0755 jedutil ${FLATPAK_DEST}/bin/jedutil
+      - install -Dm 0755 ldresample ${FLATPAK_DEST}/bin/ldresample
+      - install -Dm 0755 ldverify ${FLATPAK_DEST}/bin/ldverify
+      - install -Dm 0755 nltool ${FLATPAK_DEST}/bin/nltool
+      - install -Dm 0755 nlwav ${FLATPAK_DEST}/bin/nlwav
+      - install -Dm 0755 romcmp ${FLATPAK_DEST}/bin/romcmp
+      - install -Dm 0755 unidasm ${FLATPAK_DEST}/bin/unidasm
       - install -Dm 0644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm 0644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
       - install -Dm 0644 mame16x16.png ${FLATPAK_DEST}/share/icons/hicolor/16x16/apps/${FLATPAK_ID}.png
@@ -59,9 +70,9 @@ modules:
       - cp -r roms/ ${FLATPAK_DEST}/share/mame/
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
-      - type: git
-        url: https://github.com/mamedev/mame.git
-        commit: efce9864b44afb4681f6ad974378b0b501dfe12c
+      - type: archive
+        url: https://github.com/mamedev/mame/archive/refs/tags/mame0266.tar.gz
+        sha256: 0210be24f838f565302eed057dd6a4b1a252c9e0ca3d3f0832e8a4b1cf481f3e
       - type: file
         path: mame16x16.png
       - type: file

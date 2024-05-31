@@ -28,6 +28,7 @@
   <url type="homepage">https://www.mamedev.org</url>
   <launchable type="desktop-id">org.mamedev.MAME.desktop</launchable>
   <releases>
+    <release version="0.266" date="2024-05-31"/>
     <release version="0.265" date="2024-04-25"/>
     <release version="0.264" date="2024-03-27"/>
     <release version="0.263" date="2024-02-28"/>
