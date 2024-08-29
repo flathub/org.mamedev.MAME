@@ -11,7 +11,6 @@ finish-args:
   - --filesystem=host:ro
   - --share=network
   - --share=ipc
-  - --socket=x11
   - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=wayland
@@ -71,8 +70,8 @@ modules:
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
       - type: archive
-        url: https://github.com/mamedev/mame/archive/refs/tags/mame0268.tar.gz
-        sha256: 2083cc3453f806959f899c8337f4c5a5b3b273e0e30b66e0b4434751af0066e3
+        url: https://github.com/mamedev/mame/archive/refs/tags/mame0269.tar.gz
+        sha256: 05df2e82ff1d157282a5a667a67aa6eb331c55a64138afad0e8ac223553088ca
       - type: file
         path: mame16x16.png
       - type: file
