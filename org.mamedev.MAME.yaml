@@ -1,6 +1,6 @@
 id: org.mamedev.MAME
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: '6.8'
 sdk: org.kde.Sdk
 command: mame
 separate-locales: false
@@ -21,6 +21,8 @@ modules:
     build-options:
       no-debuginfo: true
       strip: true
+      env:
+        QT_HOME: '/'
     build-commands:
       - make
           -j ${FLATPAK_BUILDER_N_JOBS}
