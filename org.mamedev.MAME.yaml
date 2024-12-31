@@ -73,7 +73,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/mamedev/mame/archive/refs/tags/mame0273.tar.gz
-        sha256: 76cc26a2b1aaadd899fb1c416413d9ff6d9303857f859fdaf790f206620724be
+        sha256: 37d73e7772bd78ffffabac69a694323f37fd2215f1b5244e05b872c0154785fd
       - type: file
         path: mame16x16.png
       - type: file
