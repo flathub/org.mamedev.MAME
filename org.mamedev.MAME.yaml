@@ -71,8 +71,8 @@ modules:
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
       - type: archive
-        url: https://github.com/mamedev/mame/archive/refs/tags/mame0276.tar.gz
-        sha256: 965dfc33d720b4c3c6e425d5959540bd0bac88e96b878a8560678c2f5b43c44f
+        url: https://github.com/mamedev/mame/archive/refs/tags/mame0277.tar.gz
+        sha256: 60055b19fc96306927257c5ffc265ecebcbe5c944cf98113d4d78f6304556c67
       - type: file
         path: mame16x16.png
       - type: file
