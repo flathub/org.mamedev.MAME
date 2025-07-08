@@ -71,8 +71,8 @@ modules:
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
       - type: archive
-        url: https://github.com/mamedev/mame/archive/refs/tags/mame0277.tar.gz
-        sha256: 60055b19fc96306927257c5ffc265ecebcbe5c944cf98113d4d78f6304556c67
+        url: https://github.com/mamedev/mame/archive/refs/tags/mame0278.tar.gz
+        sha256: ca5f44a0ed834875f8420a75587706af210ff8c5922942509bc5bfef7d45c360
       - type: file
         path: mame16x16.png
       - type: file
@@ -93,9 +93,3 @@ modules:
         path: org.mamedev.MAME.metainfo.xml
       - type: file
         path: mame.ini
-      - type: patch
-        path: floppy.patch
-      - type: patch
-        path: sound.patch
-      - type: patch
-        path: ym3802.patch
