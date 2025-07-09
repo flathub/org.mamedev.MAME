@@ -93,3 +93,5 @@ modules:
         path: org.mamedev.MAME.metainfo.xml
       - type: file
         path: mame.ini
+      - type: patch
+        path: ym3802.patch
