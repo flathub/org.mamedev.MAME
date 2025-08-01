@@ -1,6 +1,6 @@
 id: org.mamedev.MAME
 runtime: org.kde.Platform
-runtime-version: '6.8'
+runtime-version: '6.9'
 sdk: org.kde.Sdk
 command: mame
 separate-locales: false
@@ -71,8 +71,8 @@ modules:
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
       - type: archive
-        url: https://github.com/mamedev/mame/archive/refs/tags/mame0278.tar.gz
-        sha256: ca5f44a0ed834875f8420a75587706af210ff8c5922942509bc5bfef7d45c360
+        url: https://github.com/mamedev/mame/archive/refs/tags/mame0279.tar.gz
+        sha256: 07e2e0d8ec187b12eadba3d7917ce3227bf0c5fccec8e934d70ada4fc502130c
       - type: file
         path: mame16x16.png
       - type: file
