@@ -28,6 +28,7 @@
   <url type="homepage">https://www.mamedev.org</url>
   <launchable type="desktop-id">org.mamedev.MAME.desktop</launchable>
   <releases>
+    <release version="0.285" date="2026-01-30"/>
     <release version="0.284" date="2025-12-31"/>
     <release version="0.283" date="2025-11-29"/>
     <release version="0.282" date="2025-10-31"/>
@@ -76,6 +77,7 @@
   <screenshots>
     <screenshot type="default">
         <image type="source" width="1280" height="960">https://upload.wikimedia.org/wikipedia/commons/6/6f/NewMAME.png</image>
+        <caption>MAME</caption>
     </screenshot>
   </screenshots>
 </component>
