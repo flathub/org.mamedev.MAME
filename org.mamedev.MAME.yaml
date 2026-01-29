@@ -16,6 +16,7 @@ finish-args:
   - --socket=wayland
   - --allow=bluetooth
 modules:
+  - shared-modules/SDL2/SDL2_ttf.json
   - name: mame
     buildsystem: simple
     build-options:
