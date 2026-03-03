@@ -1,3 +1,14 @@
+# README
+
+## Table of Contents
+
+- [Flatpak](#flatpak)
+- [Security](#security)
+- [Building](#building)
+    - [Manifest](#manifest)
+- [Configuration](#configuration)
+- [MAME Tools](#mame-tools)
+
 ## Flatpak
 
 This is a method for distributing MAME using the Flatpak format. The main reason for this is on locked down systems that only allow sandboxed user applications.
@@ -26,6 +37,31 @@ An explanation for some of the options included in the `org.mamedev.MAME.yaml' m
 
 `--filesystem=host:ro` primarily to be used for external data, roms, samples, etc.
 
-### Configuring
+## Configuration
 
 The default ini paths include the home `~/.mame` directory and two relative paths '.' and 'ini'.  The relative paths are not helpful inside the sandbox, and the `~/.mame` contents shouldn't be overwritten with each new MAME release.  Instead the default ini search path is patched to `$HOME/.mame;/app/share/mame/ini`.  This will allow a default base ini in `/app/share/mame/ini/mame.ini` and can be overridden in `~/.mame/mame.ini`.
+
+## MAME Tools
+
+The various MAME tools, [https://docs.mamedev.org/tools/index.html](https://docs.mamedev.org/tools/index.html), can be called using the Flatpak. For a list of the commands to use the various tools, see below.
+
+* [chdman](https://docs.mamedev.org/tools/chdman.html)
+    * **Base Command**
+        * `flatpak run --command=chdman org.mamedev.MAME`
+    * **Example**
+        * `flatpak run --command=chdman org.mamedev.MAME verify -i foobar.chd`
+* [Imgtool](https://docs.mamedev.org/tools/imgtool.html#imgtool-format-info)
+    * **Base Command**
+        * `flatpak run --command=imgtool org.mamedev.MAME`
+    * **Example**
+        * `flatpak run --command=imgtool org.mamedev.MAME getall coco_jvc_rsdos myimage.dsk`
+* [Castool](https://docs.mamedev.org/tools/castool.html)
+    * **Base Command**
+        * `flatpak run --command=castool org.mamedev.MAME`
+    * **Example**
+        * `flatpak run --command=castool org.mamedev.MAME convert coco zaxxon.cas zaxxon.wav`
+* [Floptool](https://docs.mamedev.org/tools/floptool.html)
+    * **Base Command**
+        * `flatpak run --command=floptool org.mamedev.MAME`
+    * **Example Command**
+        * `flatpak run --command=floptool org.mamedev.MAME convert ddp mybasicprogram.ddp mybasicprogram.wav`
