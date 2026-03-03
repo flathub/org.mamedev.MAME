@@ -16,7 +16,6 @@ finish-args:
   - --socket=wayland
   - --allow=bluetooth
 modules:
-  - shared-modules/SDL2/SDL2_ttf.json
   - name: mame
     buildsystem: simple
     build-options:
@@ -28,6 +27,7 @@ modules:
       - make
           -j ${FLATPAK_BUILDER_N_JOBS}
           CFLAGS+=-Wno-error=restrict
+          OSD=sdl3
           TOOLS=1
           USE_SYSTEM_LIB_FLAC=1
           SDL_INI_PATH='$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
