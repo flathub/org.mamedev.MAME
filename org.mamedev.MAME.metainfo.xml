@@ -29,6 +29,7 @@
   <url type="vcs-browser">https://github.com/mamedev/mame</url>
   <launchable type="desktop-id">org.mamedev.MAME.desktop</launchable>
   <releases>
+    <release version="0.287" date="2026-03-31"/>
     <release version="0.286" date="2026-02-26"/>
     <release version="0.285" date="2026-01-30"/>
     <release version="0.284" date="2025-12-31"/>
