@@ -30,6 +30,7 @@ modules:
           OSD=sdl3
           TOOLS=1
           USE_SYSTEM_LIB_FLAC=1
+          SDL_INI_PATH='$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
           LDOPTS=-Wl,-s
       - install -Dm 0755 mame ${FLATPAK_DEST}/bin/mame
       - install -Dm 0755 castool ${FLATPAK_DEST}/bin/castool
@@ -71,8 +72,8 @@ modules:
       - cp -r samples/ ${FLATPAK_DEST}/share/mame/
     sources:
       - type: archive
-        url: https://github.com/mamedev/mame/archive/refs/tags/mame0288.tar.gz
-        sha256: 244d916eb3fb8bcd71f2ac51ae71ab6af8cf99869ea7b85d7efc7339ea56c563
+        url: https://github.com/mamedev/mame/archive/refs/tags/mame0289.tar.gz
+        sha256: 0929cc749afabcef892900e10dd90bd8b05f94a7dde8f367ac6a5d2082589f84
       - type: file
         path: mame16x16.png
       - type: file
@@ -95,5 +96,3 @@ modules:
         path: mame.ini
       - type: patch
         path: ym3802.patch
-      - type: patch
-        path: inipath.patch
