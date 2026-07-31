@@ -30,7 +30,7 @@ modules:
           OSD=sdl3
           TOOLS=1
           USE_SYSTEM_LIB_FLAC=1
-          SDL_INI_PATH='$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
+          SDL_INI_PATH='$$$$HOME/.APP_NAME;/app/share/APP_NAME/ini'
           LDOPTS=-Wl,-s
       - install -Dm 0755 mame ${FLATPAK_DEST}/bin/mame
       - install -Dm 0755 castool ${FLATPAK_DEST}/bin/castool
